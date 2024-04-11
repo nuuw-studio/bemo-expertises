@@ -2,7 +2,7 @@
 
 Simple website with **D**ecap CMS, **E**leventy, **A**lpine JS & **T**ailwind CSS
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/66625d14-f951-4b0c-8838-55b951bf654c/deploy-status)](https://app.netlify.com/sites/earnest-mousse-2ef924/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/66625d14-f951-4b0c-8838-55b951bf654c/deploy-status)](https://app.netlify.com/sites/bemo-expertises/deploys)
 
 ### Technologies used:
 

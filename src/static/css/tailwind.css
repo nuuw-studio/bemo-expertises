@@ -1,20 +1,65 @@
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 100.0;
+*
+* available axes:
+'wght' (range from 100.0 to 900.0
+*/
+@font-face {
+	font-family: "Outfit";
+	src: url("../fonts/Outfit-Variable.woff2") format("woff2"),
+		url("../fonts/Outfit-Variable.woff") format("woff"),
+		url("../fonts/Outfit-Variable.ttf") format("truetype");
+	font-weight: 100 900;
+	font-display: swap;
+	font-style: normal;
+	font-feature-settings: "dlig" 1, "liga" 1, "salt" 1, "tnum" 0;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 800.0;
+*
+* available axes:
+'wght' (range from 300.0 to 800.0
+*/
+@font-face {
+	font-family: "Bespoke";
+	src: url("../fonts/BespokeSlab-Variable.woff2") format("woff2"),
+		url("../fonts/BespokeSlab-Variable.woff") format("woff"),
+		url("../fonts/BespokeSlab-Variable.ttf") format("truetype");
+	font-weight: 300 800;
+	font-display: swap;
+	font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/*Your Custom CSS Goes here*/
-
+html {
+	@apply font-sans text-darkblue;
+}
 h1 {
-  @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
+	@apply text-4xl mb-3 lg:text-7xl;
 }
 
 h3 {
-  @apply text-2xl font-bold mb-3;
+	@apply text-2xl font-bold mb-3;
+}
+
+p {
+	@apply font-serif;
+}
+
+.material-symbols-rounded {
+	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 /* Syntax Highlighting*/
 
 body :not(pre) > code[class*="language-"],
 body pre[class*="language-"] {
-  @apply bg-gray-800;
+	@apply bg-gray-800;
 }

@@ -1,17 +1,32 @@
 backend:
-  # Use netlify identity as backend
   name: git-gateway
   branch: master
-  ### enable below lines for github integration ###
-  # name: github
-  # repo: surjithctly/neat-starter
 media_folder: "src/static/img"
 public_folder: "/static/img"
+site_url: /
+display_url: /
 
-# Please run "npx netlify-cms-proxy-server" for local backend
+# Please run "npx decap-server" for local backend
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Homepage"
+        name: "home"
+        file: "src/index.html"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+          - label: Team
+            name: team
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Position, name: position, widget: string}
+              - {label: Photo, name: photo, widget: image}
+
   - label: "Blog"
     name: "blog"
     folder: "src/posts"

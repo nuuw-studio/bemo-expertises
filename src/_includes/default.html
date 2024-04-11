@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth scroll-py-20">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
@@ -22,8 +22,9 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1f5173">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://kit.fontawesome.com/94261065ba.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body class="text-lg">
     {% include "./partials/navbar.html" %}
 
     {{ content | safe }}
@@ -31,6 +32,7 @@
     {% include "./partials/footer.html" %}
 
     <script src="/static/js/alpine.js"></script>
+    <script src="/static/js/preline.js"></script>
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->

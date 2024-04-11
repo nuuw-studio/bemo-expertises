@@ -29,14 +29,14 @@ module.exports = function (eleventyConfig) {
     "./src/admin/config.yml": "./admin/config.yml",
     "./node_modules/alpinejs/dist/cdn.min.js": "./static/js/alpine.js",
     "./node_modules/prismjs/themes/prism-tomorrow.css":
-      "./static/css/prism-tomorrow.css",
+    "./static/css/prism-tomorrow.css",
+    "./src/static/favicon": "./",
+    "./src/static/fonts": "./static/fonts",
+    "./src/static/js": "./static/js",
   });
 
   // Copy Image Folder to /_site
   eleventyConfig.addPassthroughCopy("./src/static/img");
-
-  // Copy favicon to route of /_site
-  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
