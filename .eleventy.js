@@ -1,6 +1,7 @@
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { eleventyImageTransformPlugin, Image } = require('@11ty/eleventy-img')
 const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
@@ -34,6 +35,43 @@ module.exports = function (eleventyConfig) {
     "./src/static/fonts": "./static/fonts",
     "./src/static/js": "./static/js",
   });
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    // which file extensions to process
+    extensions: 'html',
+
+    // Add any other Image utility options here:
+
+    // optional, output image formats
+    formats: ['webp', 'jpeg'],
+    // formats: ["auto"],
+
+    // optional, output image widths
+    // widths: ["200", "400", "800", "1200", "1600", "2400"],
+
+    // optional, attributes assigned on <img> override these values.
+    defaultAttributes: {
+        loading: 'lazy',
+        decoding: 'async',
+    },
+  });
+
+  eleventyConfig.addShortcode('image', async function (src, alt, sizes) {
+      let metadata = await Image(src, {
+          widths: [300, 600],
+          formats: ['webp', 'jpeg'],
+      })
+
+      let imageAttributes = {
+          alt,
+          sizes,
+          loading: 'lazy',
+          decoding: 'async',
+      }
+
+      // You bet we throw an error on a missing alt (alt="" works okay)
+      return Image.generateHTML(metadata, imageAttributes)
+  })
 
   // Copy Image Folder to /_site
   eleventyConfig.addPassthroughCopy("./src/static/img");
