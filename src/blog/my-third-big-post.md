@@ -73,8 +73,6 @@ Start numbering with offset:
 
 ## Code
 
-Inline `code`
-
 Indented code
 
     // Some comments
