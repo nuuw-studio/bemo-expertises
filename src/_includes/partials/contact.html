@@ -1,130 +1,192 @@
 <div class="container px-4 py-10 sm:px-6 lg:px-8 lg:py-14" id="contact">
-  <!-- Grid -->
-  <div class="grid lg:grid-cols-2 gap-12">
-    <div>
-      <h1 class="text-3xl font-bold sm:text-4xl lg:text-5xl lg:leading-tight">
-        Contacteer ons
-      </h1>
-      <p class="mt-1 md:text-lg">
-        Neem vrijblijvend contact op voor meer informatie of een offerte.<br />​De opmaak van het EPC en het asbestattest kan meestal in één plaatsbezoek afgehandeld worden.
-      </p>
+    <!-- Grid -->
+    <div class="grid gap-12 lg:grid-cols-2">
+        <div>
+            <h1
+                class="text-3xl font-bold sm:text-4xl lg:text-5xl lg:leading-tight"
+            >
+                Contacteer ons
+            </h1>
+            <p class="mt-1 md:text-lg">
+                Neem vrijblijvend contact op voor meer informatie of een
+                offerte.<br />​De opmaak van het EPC en het asbestattest kan
+                meestal in één plaatsbezoek afgehandeld worden.
+            </p>
 
-      <div class="mt-8">
+            <div class="mt-8">
+                <ul class="mt-2 space-y-2">
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-sharp fa-light fa-envelope fa-fw"></i>
+                        <a href="mailto:ben.moermans@proximus.be">
+                            ben.moermans@proximus.be
+                        </a>
+                    </li>
 
-        <ul class="mt-2 space-y-2">
-          <li class="flex space-x-3 items-center">
-            <i class="fa-sharp fa-light fa-envelope fa-fw"></i>
-            <a href="mailto:ben.moermans@proximus.be">
-              ben.moermans@proximus.be
-            </a>
-          </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-sharp fa-light fa-location-dot fa-fw"></i>
+                        <span> Langstraat 18A, 3830 Wellen </span>
+                    </li>
 
-          <li class="flex space-x-3 items-center">
-            <i class="fa-sharp fa-light fa-location-dot fa-fw"></i>
-            <span>
-              Langstraat 18A, 3830 Wellen
-            </span>
-          </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-sharp fa-light fa-circle-info fa-fw"></i>
+                        <span> BE 1003.839.241 </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Col -->
 
-          <li class="flex space-x-3 items-center">
-            <i class="fa-sharp fa-light fa-circle-info fa-fw"></i>
-            <span>
-            BE 1003.839.241
-            </span>
-          </li>
+        <div class="relative">
+            <!-- Card -->
+            <div
+                class="flex flex-col p-4 border border-offwhite rounded-xl sm:p-6 lg:p-10"
+                id="contactForm"
+            >
+                <h2 class="text-xl font-semibold">
+                    Stuur ons uw bericht of vraag via onderstaand formulier
+                </h2>
 
-        </ul>
-      </div>
+                <form
+                    id="contact-form"
+                    method="POST"
+                    netlify-honeypot="bot-field"
+                    data-netlify="true"
+                >
+                    <div class="grid gap-4 mt-6 lg:gap-6">
+                        <!-- Grid -->
+                        <div
+                            class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6"
+                        >
+                            <div class="hidden">
+                                <label>
+                                    Don’t fill this out if you’re human:
+                                    <input name="bot-field" />
+                                </label>
+                            </div>
+                            <div>
+                                <label
+                                    for="voornaam"
+                                    class="block mb-2 font-medium"
+                                    >Voornaam</label
+                                >
+                                <input
+                                    type="text"
+                                    name="voornaam"
+                                    id="voornaam"
+                                    class="block w-full px-4 py-3 border rounded-lg outline-none border-offwhite focus:border-bluegreen focus:ring-bluegreen disabled:opacity-50 disabled:pointer-events-none"
+                                />
+                            </div>
 
+                            <div>
+                                <label
+                                    for="achternaam"
+                                    class="block mb-2 font-medium"
+                                    >Achternaam</label
+                                >
+                                <input
+                                    type="text"
+                                    name="achternaam"
+                                    id="achternaam"
+                                    class="block w-full px-4 py-3 border rounded-lg outline-none border-offwhite focus:border-bluegreen focus:ring-bluegreen disabled:opacity-50 disabled:pointer-events-none"
+                                />
+                            </div>
+                        </div>
+                        <!-- End Grid -->
+
+                        <div>
+                            <label for="email" class="block mb-2 font-medium"
+                                >E-mailadres</label
+                            >
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                autocomplete="email"
+                                class="block w-full px-4 py-3 border rounded-lg outline-none border-offwhite focus:border-bluegreen focus:ring-bluegreen disabled:opacity-50 disabled:pointer-events-none"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                for="hs-about-hire-us-1"
+                                class="block mb-2 font-medium"
+                                >Bericht/vraag</label
+                            >
+                            <textarea
+                                id="hs-about-hire-us-1"
+                                name="hs-about-hire-us-1"
+                                rows="4"
+                                class="block w-full px-4 py-3 border rounded-lg outline-none border-offwhite focus:border-bluegreen focus:ring-bluegreen disabled:opacity-50 disabled:pointer-events-none"
+                            ></textarea>
+                        </div>
+                    </div>
+                    <!-- Checkbox -->
+                    {#
+                    <div class="flex mt-3">
+                        <div class="flex">
+                            <input
+                                id="remember-me"
+                                name="remember-me"
+                                type="checkbox"
+                                class="shrink-0 mt-1.5 border-offwhite border rounded focus:ring-bluegreen"
+                            />
+                        </div>
+                        <div class="ms-3">
+                            <label for="remember-me" class=""
+                                >Door dit formulier in te dienen, verklaar ik
+                                dat ik
+                                <a
+                                    class="font-medium decoration-2 hover:underline"
+                                    href="#"
+                                    >het privacybeleid</a
+                                >
+                                heb gelezen en begrepen.</label
+                            >
+                        </div>
+                    </div>
+                    #}
+                    <!-- End Checkbox -->
+
+                    <div class="grid mt-6">
+                        <button
+                            type="submit"
+                            class="inline-flex items-center justify-center w-full px-4 py-3 font-semibold text-white transition-colors border border-transparent rounded-lg gap-x-2 bg-green hover:bg-bluegreen disabled:opacity-50 disabled:pointer-events-none"
+                        >
+                            Verzenden
+                        </button>
+                    </div>
+                </form>
+                <!-- End Grid -->
+            </div>
+            <!-- End Card -->
+        </div>
+        <!-- End Col -->
     </div>
-    <!-- End Col -->
-
-    <div class="relative">
-      <!-- Card -->
-      <div class="flex flex-col border border-offwhite rounded-xl p-4 sm:p-6 lg:p-10">
-        <h2 class="text-xl font-semibold">
-          Stuur ons uw bericht of vraag via onderstaand formulier
-        </h2>
-
-        <form
-          id="contact-form"
-          method="POST"
-          netlify-honeypot="bot-field"
-          data-netlify="true">
-          <div class="mt-6 grid gap-4 lg:gap-6">
-            <!-- Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-              <div class="hidden">
-                <label>
-                  Don’t fill this out if you’re human: <input name="bot-field" />
-                </label>
-              </div>
-              <div>
-                <label for="voornaam" class="block mb-2  font-medium">Voornaam</label>
-                <input type="text" name="voornaam" id="voornaam" class="py-3 px-4 block w-full border-offwhite border rounded-lg outline-none focus:border-bluegreen focus:ring-bluegreen disabled:opacity-50 disabled:pointer-events-none">
-              </div>
-
-              <div>
-                <label for="achternaam" class="block mb-2  font-medium">Achternaam</label>
-                <input type="text" name="achternaam" id="achternaam" class="py-3 px-4 block w-full border-offwhite border rounded-lg  outline-none focus:border-bluegreen focus:ring-bluegreen disabled:opacity-50 disabled:pointer-events-none">
-              </div>
-            </div>
-            <!-- End Grid -->
-
-            <div>
-              <label for="email" class="block mb-2  font-medium">E-mailadres</label>
-              <input type="email" name="email" id="email" autocomplete="email" class="py-3 px-4 block w-full border-offwhite border rounded-lg  outline-none focus:border-bluegreen focus:ring-bluegreen disabled:opacity-50 disabled:pointer-events-none">
-            </div>
-
-            <div>
-              <label for="hs-about-hire-us-1" class="block mb-2  font-medium">Bericht/vraag</label>
-              <textarea id="hs-about-hire-us-1" name="hs-about-hire-us-1" rows="4" class="py-3 px-4 block w-full border-offwhite border rounded-lg  outline-none focus:border-bluegreen focus:ring-bluegreen disabled:opacity-50 disabled:pointer-events-none"></textarea>
-            </div>
-          </div>
-          <!-- Checkbox -->
-          {# <div class="mt-3 flex">
-            <div class="flex">
-              <input id="remember-me" name="remember-me" type="checkbox" class="shrink-0 mt-1.5 border-offwhite border rounded  focus:ring-bluegreen">
-            </div>
-            <div class="ms-3">
-              <label for="remember-me" class=" ">Door dit formulier in te dienen, verklaar ik dat ik <a class=" decoration-2 hover:underline font-medium" href="#">het privacybeleid</a> heb gelezen en begrepen.</label>
-            </div>
-          </div> #}
-          <!-- End Checkbox -->
-
-          <div class="mt-6 grid">
-            <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2  font-semibold rounded-lg border border-transparent bg-green text-white hover:bg-bluegreen transition-colors disabled:opacity-50 disabled:pointer-events-none">Verzenden</button>
-          </div>
-        </form>
-        <!-- End Grid -->
-
-
-      </div>
-      <!-- End Card -->
-    </div>
-    <!-- End Col -->
-  </div>
-  <!-- End Grid -->
+    <!-- End Grid -->
 </div>
 
 <script>
-const handleSubmit = (event) => {
-  event.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault()
 
-  const myForm = event.target;
-  const formData = new FormData(myForm);
+        const contactForm = event.target
+        const formData = new FormData(contactForm)
 
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => alert("Thank you for your submission"))
-    .catch((error) => alert(error));
-};
+        function showSuccessMessage() {
+            const successMessage = (document.createElement(
+                'div'
+            ).textContent = `<h2>Bedankt voor uw bericht. We nemen zo snel mogelijk contact met u op.</h2><a class="inline-flex items-center justify-center w-full px-4 py-3 mt-3 font-semibold text-white transition-colors border border-transparent rounded-lg gap-x-2 bg-green hover:bg-bluegreen disabled:opacity-50 disabled:pointer-events-none" href="/">Terug</a>`)
+            contactForm.parentNode.innerHTML = successMessage
+        }
 
-document
-  .querySelector("form")
-  .addEventListener("submit", handleSubmit);
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString(),
+        })
+            .then(() => showSuccessMessage())
+            .catch((error) => alert(error))
+    }
 
+    document.querySelector('form').addEventListener('submit', handleSubmit)
 </script>
