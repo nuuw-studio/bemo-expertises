@@ -34,9 +34,32 @@
 	font-style: normal;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "preline/plugin";
+
+@theme {
+  --color-darkblue: #1f5173;
+  --color-green: #7be495;
+  --color-bluegreen: #309d9c;
+  --color-offwhite: #d1e8ce;
+  
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+  
+  --font-body: "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-serif: "Bespoke", ui-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto, serif;
+}
 
 html {
 	@apply font-serif text-darkblue;
