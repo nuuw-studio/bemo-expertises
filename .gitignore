@@ -11,6 +11,3 @@ package-lock.json
 .netlify
 /.cache
 .cache/
-.cache
-.cache/eleventy-fetch-9a84978550efbd66baed678e6b0fb4
-/.cache
