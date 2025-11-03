@@ -3,11 +3,11 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
     darkMode: 'class',
     content: [
-        './**/*.html',
-        './**/*.njk',
-        './**/*.md',
-        './**/*.scss',
-        'node_modules/preline/dist/*.js',
+        './src/**/*.html',
+        './src/**/*.njk',
+        './src/**/*.md',
+        './src/**/*.scss',
+        './node_modules/preline/dist/*.js',
     ],
     theme: {
         container: {
