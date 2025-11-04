@@ -1,9 +1,24 @@
 <!-- ========== HEADER ========== -->
 <header
-    class="sticky container top-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full"
+    class="container sticky top-0 z-50 flex flex-wrap w-full md:justify-start md:flex-nowrap"
+    x-data="{
+        scrolled: false,
+        lastScroll: 0,
+        handleScroll() {
+            const currentScroll = window.scrollY;
+            const threshold = 100;
+            const buffer = 50;
+
+            if (Math.abs(currentScroll - this.lastScroll) > buffer) {
+                this.scrolled = currentScroll > threshold;
+                this.lastScroll = currentScroll;
+            }
+        }
+    }"
+    @scroll.window.throttle.100ms="handleScroll()"
 >
     <nav
-        class="relative container w-full bg-white/75 mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:px-6 lg:px-8 backdrop-blur"
+        class="container relative w-full px-4 py-3 mx-2 transition-all duration-300 bg-white/75 md:flex md:items-center md:justify-between md:px-6 lg:px-8 backdrop-blur"
         aria-label="Global"
     >
         <div class="flex items-center justify-between">
@@ -11,46 +26,47 @@
                 ><img
                     src="/static/img/bemo-logo.svg"
                     alt="Bemo expertises logo"
-                    class="w-32 md:w-52"
+                    class="transition-all duration-300"
+                    :class="scrolled ? 'w-10 md:w-30' : 'w-32 md:w-52'"
             />
             </a>
             <div class="md:hidden">
                 <button
                     type="button"
-                    class="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full border border-gray-200 text-darkblue hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+                    class="flex items-center justify-center text-sm font-semibold border border-gray-200 rounded-full hs-collapse-toggle size-8 text-darkblue hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
                     data-hs-collapse="#navbar-collapse-with-animation"
                     aria-controls="navbar-collapse-with-animation"
                     aria-label="Toggle navigation"
                 >
                     <i class="fa-light fa-bars hs-collapse-open:hidden fa-fw"></i>
-                    <i class="fa-light fa-times hs-collapse-open:block hidden fa-fw"></i>
+                    <i class="hidden fa-light fa-times hs-collapse-open:block fa-fw"></i>
 
                 </button>
             </div>
         </div>
         <div
             id="navbar-collapse-with-animation"
-            class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
+            class="hidden overflow-hidden transition-all duration-300 hs-collapse basis-full grow md:block"
         >
             <div
-                class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7"
+                class="flex flex-col mt-5 gap-y-4 gap-x-0 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7"
                 data-hs-scrollspy="#main"
             >
-                <a class="hover:text-bluegreen transition-colors hs-scrollspy-active:text-bluegreen" href="#epc"
+                <a class="transition-colors hover:text-bluegreen hs-scrollspy-active:text-bluegreen" href="#epc"
                     >EPC</a
                 >
                 <a
-                    class="hover:text-bluegreen transition-colors hs-scrollspy-active:text-bluegreen"
+                    class="transition-colors hover:text-bluegreen hs-scrollspy-active:text-bluegreen"
                     href="#asbestattest"
                     >Asbestattest</a
                 >
                 <a
-                    class="hover:text-bluegreen transition-colors hs-scrollspy-active:text-bluegreen"
+                    class="transition-colors hover:text-bluegreen hs-scrollspy-active:text-bluegreen"
                     href="#sloopopvolging"
                     >Sloopopvolgingsplan</a
                 >
                 <a
-                    class="hover:bg-bluegreen transition-colors bg-green text-white px-5 py-3 rounded-full leading-none hs-scrollspy-active:text-bluegreen"
+                    class="px-5 py-3 leading-none text-white transition-colors rounded-full hover:bg-bluegreen bg-green hs-scrollspy-active:text-bluegreen"
                     href="#contact"
                     >Contact</a
                 >
@@ -59,12 +75,3 @@
     </nav>
 </header>
 <!-- ========== END HEADER ========== -->
-<script>
-  const el = HSScrollspy.getInstance('[data-hs-scrollspy="#navbar"]', true);
-
-  el.element.on('beforeScroll', (instance) => {
-    return new Promise((res) => {
-        res(true);
-    });
-  });
-</script>

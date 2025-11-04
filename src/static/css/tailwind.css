@@ -7,14 +7,14 @@
 'wght' (range from 100.0 to 900.0
 */
 @font-face {
-	font-family: "Outfit";
-	src: url("../fonts/Outfit-Variable.woff2") format("woff2"),
-		url("../fonts/Outfit-Variable.woff") format("woff"),
-		url("../fonts/Outfit-Variable.ttf") format("truetype");
-	font-weight: 100 900;
-	font-display: swap;
-	font-style: normal;
-	font-feature-settings: "dlig" 1, "liga" 1, "salt" 1, "tnum" 0;
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-Variable.woff2') format('woff2'),
+        url('../fonts/Outfit-Variable.woff') format('woff'),
+        url('../fonts/Outfit-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-feature-settings: 'dlig' 1, 'liga' 1, 'salt' 1, 'tnum' 0;
 }
 /**
 * This is a variable font
@@ -25,30 +25,67 @@
 'wght' (range from 300.0 to 800.0
 */
 @font-face {
-	font-family: "Bespoke";
-	src: url("../fonts/BespokeSlab-Variable.woff2") format("woff2"),
-		url("../fonts/BespokeSlab-Variable.woff") format("woff"),
-		url("../fonts/BespokeSlab-Variable.ttf") format("truetype");
-	font-weight: 300 800;
-	font-display: swap;
-	font-style: normal;
+    font-family: 'Bespoke';
+    src: url('../fonts/BespokeSlab-Variable.woff2') format('woff2'),
+        url('../fonts/BespokeSlab-Variable.woff') format('woff'),
+        url('../fonts/BespokeSlab-Variable.ttf') format('truetype');
+    font-weight: 300 800;
+    font-display: swap;
+    font-style: normal;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@import 'preline/variants.css';
+
+@theme {
+    /* Custom Colors */
+    --color-darkblue: #1f5173;
+    --color-green: #7be495;
+    --color-bluegreen: #309d9c;
+    --color-offwhite: #d1e8ce;
+
+    /* Primary Color Scale */
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-400: #60a5fa;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --color-primary-700: #1d4ed8;
+    --color-primary-800: #1e40af;
+    --color-primary-900: #1e3a8a;
+    --color-primary-950: #172554;
+
+    /* Fonts */
+    --font-body: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+        Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font-sans: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+        Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font-serif: 'Bespoke', ui-serif, system-ui, -apple-system, 'Segoe UI',
+        Roboto, 'Helvetica Neue', Arial, Noto, serif;
+}
+
+@utility container {
+    margin-inline: auto;
+}
 
 html {
-	@apply font-serif text-darkblue;
+    font-family: var(--font-serif);
+    color: var(--color-darkblue);
 }
+
 h1 {
-	@apply text-4xl mb-3 lg:text-7xl font-sans;
+    font-family: var(--font-sans);
 }
 
 h3 {
-	@apply text-2xl font-bold mb-3 font-sans;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
 }
 
 p {
-	@apply font-serif;
+    font-family: var(--font-serif);
 }
