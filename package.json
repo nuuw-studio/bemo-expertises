@@ -4,7 +4,7 @@
         "eleventy": "eleventy --watch",
         "debug": "set DEBUG=* & eleventy",
         "css": "postcss src/static/css/tailwind.css --o _site/static/css/style.css --watch",
-        "build": "eleventy && npx tailwindcss -i src/static/css/tailwind.css -o _site/static/css/style.css",
+        "build": "eleventy && npx tailwindcss -i src/static/css/tailwind.css -o _site/static/css/style.css --minify",
         "browsersync": "browser-sync start --server _site --files _site --port 8080 --no-notify --no-open"
     },
     "devDependencies": {
