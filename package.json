@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@11ty/eleventy-img": "^4.0.2",
+        "@tailwindcss/cli": "^4.1.16",
         "@tailwindcss/postcss": "^4.1.16",
         "preline": "^3.2.3"
     }
