@@ -22,7 +22,6 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 site_url: https://bemo-expertises.be
 media_folder: "src/static/img"
 public_folder: "/static/img"
-site_url: /
 display_url: /
 
 # Please run "npx decap-server" for local backend
