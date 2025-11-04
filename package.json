@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0-alpha.6",
-    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.1.16",
     "@tailwindcss/typography": "^0.5.0-alpha.3",
     "alpinejs": "^3.7.1",
     "browser-sync": "^2.27.7",
@@ -26,6 +26,6 @@
     "@11ty/eleventy-img": "^4.0.2",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.5",
-    "preline": "^2.1.0"
+    "preline": "^3.2.3"
   }
 }
