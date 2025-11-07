@@ -55,9 +55,15 @@ collections:
       - { label: "Icon", name: "icon", widget: "string", hint: "Use FontAwesome icon name, e.g., 'file-certificate'" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
+      - { label: "hero afbeelding", name: "hero_image", widget: "image", hint: "Hero afbeelding voor de dienst pagina" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "hidden", default: "dienst" }
       - { label: "Lees meer link tekst", name: "read_more", widget: "string", required: false, hint: "Optional custom text for the 'read more' link" }
+      - { label: galerij, label_singular: afbeelding, name: gallery, widget: list, required: false, hint: "Optionele galerij van afbeeldingen voor de dienst pagina", fields: [
+          { label: Afbeelding, name: image, widget: image },
+          { label: Bijschrift, name: caption, widget: string, required: false }
+        ]
+      }
 
   - label: "Blog"
     name: "blog"

@@ -3,8 +3,12 @@ icon: plug
 title: Elektrische keuring
 description: Een elektrische keuring is verplicht bij verkoop van een woning,
   bij nieuwe installaties of na belangrijke wijzigingen.
+hero_image: /static/img/ek-1.jpg
 tags: dienst
 read_more: Vertel me meer
+gallery:
+  - image: /static/img/asbest-2.jpg
+  - image: /static/img/asbest-1.jpg
 ---
 Een elektrische keuring is verplicht bij verkoop van een woning, bij nieuwe installaties of na belangrijke wijzigingen. Het doel is om de veiligheid van de installatie te garanderen. 
 
