@@ -1,0 +1,69 @@
+---
+title: Dienst
+layout: default
+---
+<main class="container px-4 py-10 sm:px-6 lg:px-8 lg:py-20" id="epc">
+    <!-- Grid -->
+    <div class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
+        <div class="relative w-full h-full overflow-hidden min-h-40">
+            <img
+                class="absolute object-cover w-full h-full rounded-xl"
+                src="/static/img/epc.jpg"
+                alt="epc"
+            />
+        </div>
+        <!-- End Col -->
+        <div class="py-8 mt-5 sm:mt-10 lg:mt-0 lg:py-12">
+            <div class="space-y-6 sm:space-y-8">
+                <!-- Title -->
+                <div class="space-y-2 md:space-y-4">
+                    <h2 class="text-3xl font-bold lg:text-4xl hyphens-auto">
+                        {{ title }}
+                    </h2>
+                    {{ content | safe }}
+                </div>
+                <!-- End Title -->
+
+                <!-- List -->
+                <ul class="space-y-2 sm:space-y-4">
+                    <li class="flex items-center space-x-3">
+                        <span
+                            class="flex items-center justify-center rounded-full size-5 text-bluegreen"
+                        >
+                            <i
+                                class="fa-sharp fa-light fa-circle-check fa-fw"
+                            ></i>
+                        </span>
+
+                        <span>Verplicht bij verkoop of verhuur.</span>
+                    </li>
+
+                    <li class="flex items-center space-x-3">
+                        <span
+                            class="flex items-center justify-center rounded-full size-5 text-bluegreen"
+                        >
+                            <i
+                                class="fa-sharp fa-light fa-circle-check fa-fw"
+                            ></i>
+                        </span>
+
+                        <span> Vergroot de waarde van uw huis. </span>
+                    </li>
+
+                    <li class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center rounded-full size-5 text-bluegreen" >
+                            <i class="fa-sharp fa-light fa-circle-check"></i>
+                        </span>
+
+                        <span> Professionele begeleiding verzekerd. </span>
+                    </li>
+                </ul>
+                <!-- End List -->
+            </div>
+        </div>
+        <!-- End Col -->
+    </div>
+    <!-- End Grid -->
+</main>
+
+{% include "../_includes/partials/contact.html" %}
