@@ -1,8 +1,10 @@
 ---
 icon: fire-flame-simple
+intro_image: /static/img/gas-1.jpg
 title: Gaskeuringen
 description: Een gaskeuring is verplicht bij nieuwe of gewijzigde
   aardgasinstallaties, vóór de aansluiting op het net.
+hero_image: /static/img/gas-1.jpg
 tags: dienst
 ---
 Een gaskeuring is verplicht bij nieuwe of gewijzigde aardgasinstallaties, vóór de aansluiting op het net. 

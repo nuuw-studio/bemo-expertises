@@ -27,6 +27,7 @@
         "@11ty/eleventy-img": "^4.0.2",
         "@tailwindcss/cli": "^4.1.16",
         "@tailwindcss/postcss": "^4.1.16",
+        "dotenv": "^17.2.3",
         "preline": "^3.2.3"
     }
 }

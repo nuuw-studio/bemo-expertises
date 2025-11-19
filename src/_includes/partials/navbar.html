@@ -52,22 +52,12 @@
                 class="flex flex-col mt-5 gap-y-4 gap-x-0 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7"
                 data-hs-scrollspy="#main"
             >
-                <a class="transition-colors hover:text-bluegreen hs-scrollspy-active:text-bluegreen" href="/#epc"
-                    >EPC</a
-                >
-                <a
-                    class="transition-colors hover:text-bluegreen hs-scrollspy-active:text-bluegreen"
-                    href="/#asbestattest"
-                    >Asbestattest</a
-                >
-                <a
-                    class="transition-colors hover:text-bluegreen hs-scrollspy-active:text-bluegreen"
-                    href="/#sloopopvolging"
-                    >Sloopopvolgingsplan</a
-                >
+                {% for item in navigation.items %}
+                    <a class="transition-colors hover:text-bluegreen hs-scrollspy-active:text-bluegreen" href="{{ item.url }}">{{ item.text }}</a>
+                {% endfor %}
                 <a
                     class="px-5 py-3 leading-none text-white transition-colors rounded-full hover:bg-bluegreen bg-green hs-scrollspy-active:text-bluegreen"
-                    href="/#contact"
+                    href="#contact"
                     >Contact</a
                 >
             </div>

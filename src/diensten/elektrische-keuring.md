@@ -1,5 +1,6 @@
 ---
 icon: plug
+intro_image: /static/img/ek3.jpg
 title: Elektrische keuring
 description: Een elektrische keuring is verplicht bij verkoop van een woning,
   bij nieuwe installaties of na belangrijke wijzigingen.

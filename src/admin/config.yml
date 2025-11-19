@@ -62,11 +62,35 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: "Icon", name: "icon", widget: "string", hint: "Use FontAwesome icon name, e.g., 'file-certificate'" }
+      - { label: "Overzicht icoon", name: "icon", widget: "string", hint: "Use FontAwesome icon name, e.g., 'file-certificate'" }
+      - { label: "overzicht afbeelding", name: "intro_image", widget: "image", hint: "Affbeelding voor blokje in dienstenlijst" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "hero afbeelding", name: "hero_image", widget: "image", hint: "Hero afbeelding voor de dienst pagina" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Hero inhoud", name: "hero_content", widget: "list", types: [
+          { label: "Tekst", name: "text", widget: "object", fields: [
+              { label: "Inhoud", name: "content", widget: "markdown", hint: "Voeg tekst toe voor deze sectie" }
+            ]
+          },
+          {
+            label: "Icon list",
+            name: "iconlist",
+            widget: "object",
+            fields: [
+              {
+                label: "Items",
+                name: "items",
+                widget: "list",
+                hint: "Voeg items toe aan de lijst",
+                fields: [
+                  { label: "Icon", name: "icon", widget: "string" },
+                  { label: "text", name: "text", widget: "string" }
+              ]
+            }
+          ]
+        }
+      ]
+      }
       - { label: "Tags", name: "tags", widget: "hidden", default: "dienst" }
       - { label: "Lees meer link tekst", name: "read_more", widget: "string", required: false, hint: "Optional custom text for the 'read more' link" }
       - { label: galerij, label_singular: afbeelding, name: gallery, widget: list, required: false, hint: "Optionele galerij van afbeeldingen voor de dienst pagina", fields: [
@@ -106,8 +130,8 @@ collections:
           - label: Nav Items
             name: items
             widget: list
-            allow_add: false
-            collapsed: false
+            allow_add: true
+            collapsed: true
             fields:
               - { label: Title, name: text, widget: string }
               - { label: URL, name: url, widget: string }

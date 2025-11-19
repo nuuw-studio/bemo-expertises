@@ -1,5 +1,6 @@
 ---
 icon: badge-check
+intro_image: /static/img/asbest-3.jpg
 title: Asbestinventaris | Asbestattest
 description: Laat onze expertise u helpen bij het identificeren van
   asbesthoudende materialen.

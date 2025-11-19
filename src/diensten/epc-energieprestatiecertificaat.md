@@ -1,5 +1,6 @@
 ---
 icon: file-certificate
+intro_image: /static/img/epc-2.jpg
 title: EPC | Energieprestatiecertificaat
 description: Vertrouw op onze deskundigheid voor nauwkeurige EPC-certificeringen.
 hero_image: /static/img/epc-3.jpg
