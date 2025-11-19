@@ -17,6 +17,9 @@ module.exports = function (eleventyConfig) {
         )
     })
 
+    eleventyConfig.addWatchTarget("src/cms-config/**/*.yml");
+    eleventyConfig.addWatchTarget("src/cms-config/**/*.js");
+
     // To Support .yaml Extension in _data
     // You may remove this if you can use JSON
     eleventyConfig.addDataExtension('yaml', (contents) => yaml.load(contents))

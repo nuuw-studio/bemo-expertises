@@ -1,0 +1,51 @@
+collections:
+  - label: "Diensten"
+    name: "diensten"
+    folder: "src/diensten"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Overzicht icoon", name: "icon", widget: "string", hint: "Use FontAwesome icon name, e.g., 'file-certificate'" }
+      - { label: "overzicht afbeelding", name: "intro_image", widget: "image", hint: "Afbeelding voor blokje in dienstenlijst" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+
+      - { label: "hero afbeelding", name: "hero_image", widget: "image", hint: "Hero afbeelding voor de dienst pagina" }
+
+      - label: "Hero inhoud"
+        name: "hero_content"
+        widget: list
+        types:
+          - label: "Tekst"
+            name: "text"
+            widget: object
+            fields:
+              - { label: "Inhoud", name: "content", widget: markdown }
+
+          - label: "Icon list"
+            name: "iconlist"
+            widget: object
+            fields:
+              - label: "Items"
+                name: "items"
+                widget: list
+                hint: "Voeg items toe aan de lijst"
+                fields:
+                  - { label: "Icon", name: "icon", widget: string }
+                  - { label: "text", name: "text", widget: string }
+
+      - { label: "Tags", name: "tags", widget: "hidden", default: "dienst" }
+
+      - { label: "Lees meer link tekst", name: "read_more", widget: string, required: false }
+
+      - label: Galerij
+        label_singular: Afbeelding
+        name: gallery
+        widget: list
+        required: false
+        hint: "Optionele galerij van afbeeldingen voor de dienst pagina"
+        fields:
+          - { label: Afbeelding, name: image, widget: image }
+          - { label: Bijschrift, name: caption, widget: string, required: false }
+      - partial: "seo"

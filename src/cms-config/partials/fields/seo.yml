@@ -1,0 +1,11 @@
+seo:
+  label: seo
+  name: seo
+  widget: object
+  collapsed: true
+  fields:
+    - { label: "SEO Title", name: "seo_title", widget: "string", required: false, hint: "Optional title for search engines" }
+    - { label: "SEO Description", name: "seo_description", widget: "string", required: false, hint: "Meta description" }
+    - { label: "SEO Image", name: "seo_image", widget: "image", required: false, hint: "Image used for social previews" }
+    - { label: "Canonical URL", name: "canonical", widget: "string", required: false }
+    - { label: "Robots", name: "robots", widget: "string", required: false, hint: "Optional robots meta (e.g. noindex)" }

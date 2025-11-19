@@ -10,6 +10,9 @@ read_more: Ontdek hoe wij u verder helpen
 gallery:
   - image: /static/img/asbest-1.jpg
   - image: /static/img/asbest-3.jpg
+seo:
+  seo_title: Asbestinventaris | Asbestattest
+  seo_description: seo desc
 ---
 Sinds 2022 is een asbestattest verplicht bij verkoop van gebouwen gebouwd vóór 2001. Het attest geeft aan of er asbesthoudende materialen aanwezig zijn, en in welke staat deze verkeren. 
 

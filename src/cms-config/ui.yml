@@ -1,0 +1,6 @@
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+
+site_url: https://bemo-expertises.be
+media_folder: "src/static/img"
+public_folder: "/static/img"
+display_url: /

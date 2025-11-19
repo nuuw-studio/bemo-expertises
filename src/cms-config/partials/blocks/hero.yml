@@ -1,0 +1,65 @@
+hero:
+  label: Hero
+  name: hero
+  widget: object
+  collapsed: true
+  fields:
+    - name: "background_style"
+      label: "Background Style"
+      widget: "select"
+      required: false
+      options:
+        - { label: "Light", value: "light" }
+        - { label: "Dark", value: "dark" }
+        - { label: "Image", value: "image" }
+        - { label: "Video", value: "video" }
+
+    - name: "title"
+      label: "Title"
+      widget: "string"
+      required: true
+
+    - name: "subtitle"
+      label: "Subtitle"
+      widget: "string"
+      required: false
+
+    - name: "content"
+      label: "Content"
+      widget: "text"
+      required: false
+
+    - name: "alignment"
+      label: "Text Alignment"
+      widget: "select"
+      required: false
+      options:
+        - { label: "Left", value: "left" }
+        - { label: "Center", value: "center" }
+        - { label: "Right", value: "right" }
+
+    - name: "image"
+      label: "Image"
+      widget: "image"
+      required: false
+
+    - name: "video"
+      label: "Video File"
+      widget: "file"
+      required: false
+      hint: "Shown only when Background Style is 'Video'."
+
+    - name: "cta"
+      label: "Call to Action"
+      widget: "object"
+      required: false
+      fields:
+        - { name: "label", label: "Label", widget: "string" }
+        - { name: "url", label: "URL", widget: "string" }
+        - name: "style"
+          label: "Button Style"
+          widget: "select"
+          options:
+            - { label: "Primary", value: "primary" }
+            - { label: "Secondary", value: "secondary" }
+            - { label: "Tertiary", value: "tertiary" }

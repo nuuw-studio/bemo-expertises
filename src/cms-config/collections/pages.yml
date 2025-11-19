@@ -1,0 +1,11 @@
+collections:
+  - label: "Enkelvoudige pagina's"
+    name: "pages"
+    files:
+      - label: "Homepage"
+        name: "home"
+        file: "src/index.html"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Intro, name: intro, widget: markdown }
+          - partial: "seo"
