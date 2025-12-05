@@ -6,38 +6,34 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: "Overzicht icoon", name: "icon", widget: "string", hint: "Use FontAwesome icon name, e.g., 'file-certificate'" }
-      - { label: "overzicht afbeelding", name: "intro_image", widget: "image", hint: "Afbeelding voor blokje in dienstenlijst" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-
-      - { label: "hero afbeelding", name: "hero_image", widget: "image", hint: "Hero afbeelding voor de dienst pagina" }
-
-      - label: "Hero inhoud"
-        name: "hero_content"
-        widget: list
-        types:
-          - label: "Tekst"
-            name: "text"
-            widget: object
-            fields:
-              - { label: "Inhoud", name: "content", widget: markdown }
-
-          - label: "Icon list"
-            name: "iconlist"
-            widget: object
-            fields:
-              - label: "Items"
-                name: "items"
-                widget: list
-                hint: "Voeg items toe aan de lijst"
-                fields:
-                  - { label: "Icon", name: "icon", widget: string }
-                  - { label: "text", name: "text", widget: string }
-
       - { label: "Tags", name: "tags", widget: "hidden", default: "dienst" }
+      - { label: "Titel", name: "title", widget: "string" }
+      - label: "Overzicht informatie"
+        name: "overview"
+        widget: "object"
+        summary: '{{fields.name}}: {{fields.birthdate}}'
+        fields:
+            - { label: "Overzicht icoon", name: "icon", widget: "string", hint: "Gebruik FontAwesome icon naam, e.g., 'file-certificate'" }
+            - { label: "overzicht afbeelding", name: "intro_image", widget: "image", hint: "Afbeelding voor blokje in dienstenlijst", required: false }
+            - { label: "Titel", name: "title", widget: "string" }
+            - { label: "Beschrijving", name: "description", widget: "string" }
+            - { label: "Lees meer link tekst", name: "read_more", widget: "string", default: "Lees meer", required: false }
 
-      - { label: "Lees meer link tekst", name: "read_more", widget: string, required: false }
+      - partial: "hero"
+
+      - label: Inhoud
+        name: content_blocks
+        widget: list
+        hint: "Voeg inhoudsblokken toe aan de dienst pagina"
+        types:
+          - label: Paragraaf
+            name: paragraph
+            widget: "object"
+            fields:
+              - { label: Titel, name: title, widget: "string" }
+              - { label: Tekst, name: content, widget: "markdown" }
+          - partial: "textimage"
+          - partial: "iconlist"
 
       - label: Galerij
         label_singular: Afbeelding

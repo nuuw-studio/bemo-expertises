@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicons - Place early in head -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1f5173">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
     <title>
       {% if seo.seo_title %}{{ seo.seo_title }}{% else %}{{ title }}{% endif %}
     </title>
@@ -12,19 +22,12 @@
     <meta property="og:title" content="{% if seo.seo_title %}{{ seo.seo_title }}{% else %}{{ title }}{% endif %}">
     <meta property="og:description" content="{% if seo.seo_description %}{{seo.seo_description}}{% elseif description %}{{description}}{% endif%}">
     <meta property="og:image" content="{{seo.seo_image}}">
-    <meta property="og:url" content="{{baseUrl + page.url | url }}">
+    <meta property="og:url" content="{{ settings.url ~ page.url | default('https://bemo-expertises.be') }}">
     <meta property="og:type" content="article">
 
     {% block head %}{% endblock %}
 
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1f5173">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="theme-color" content="#ffffff">
     <script src="https://kit.fontawesome.com/94261065ba.js" crossorigin="anonymous"></script>
     <script src="/static/js/alpine.js"></script>
     <script src="/static/js/preline.js"></script>

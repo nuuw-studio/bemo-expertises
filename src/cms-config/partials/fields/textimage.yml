@@ -1,0 +1,21 @@
+textimage:
+  label: "Tekst & Afbeelding"
+  name: "textimage"
+  widget: "object"
+  summary: "{{fields.title}}"
+  fields:
+    - { label: "Titel", name: "title", widget: "string", required: false }
+    - { label: "Inhoud", name: "content", widget: "markdown", required: false }
+    - label: "Afbeelding"
+      name: "image"
+      widget: "object"
+      fields:
+        - { label: "Afbeelding", name: "image", widget: "image" }
+        - { label: "Alt tekst", name: "alt", widget: "string", required: false }
+    - label: "Afbeelding positie"
+      name: "image_position"
+      widget: "select"
+      options:
+        - { label: "Links", value: "left" }
+        - { label: "Rechts", value: "right" }
+      default: "left"

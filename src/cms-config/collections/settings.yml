@@ -1,5 +1,5 @@
 collections:
-  - label: "Settings"
+  - label: "Globals"
     name: "settings"
     editor:
       preview: false
@@ -16,21 +16,20 @@ collections:
             fields:
               - { label: Title, name: text, widget: string }
               - { label: URL, name: url, widget: string }
-
-      - label: "Quick Links"
-        name: "links"
-        file: "src/_data/quicklinks.yaml"
+      - label: "diensten overzicht instellingen"
+        name: "features_overview"
+        file: "src/_data/features_overview.yaml"
         fields:
-          - label: Nav Items
-            name: links
-            widget: list
-            collapsed: false
+          - { label: Titel, name: title, widget: string }
+          - { label: Beschrijving, name: description, widget: text }
+          - label: Call to Action
+            name: cta
+            widget: object
             fields:
-              - { label: Title, name: title, widget: string }
+              - { label: Tekst, name: text, widget: string }
               - { label: URL, name: url, widget: string }
-              - { label: Description, name: desc, widget: string }
 
-      - label: "Meta Settings"
+      - label: "Meta/SEO Settings"
         name: "settings"
         file: "src/_data/settings.yaml"
         fields:

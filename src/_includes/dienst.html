@@ -21,50 +21,52 @@ layout: default
                     <h2 class="text-3xl font-bold lg:text-4xl hyphens-auto">
                         {{ title }}
                     </h2>
-                    {{ content | safe }}
+                    {% if hero_content %}
+                        {% for type in hero_content %}
+                            {% if type.content %}
+                                {{ type.content | markdown |safe }}
+                            {% endif %}
+                            {% if type.items %}
+                                <ul class="space-y-2 sm:space-y-4">
+                                    {% for item in type.items %}
+                                        <li class="flex items-center space-x-3">
+                                            <span
+                                                class="flex items-center justify-center rounded-full size-5 text-bluegreen"
+                                            >
+                                                <i
+                                                    class="fa-sharp fa-light fa-{{ item.icon | default('circle-check') }} fa-fw"
+                                                ></i>
+                                            </span>
+
+                                            <span>{{ item.text }}</span>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 <!-- End Title -->
-
-                <!-- List -->
-                <ul class="space-y-2 sm:space-y-4">
-                    <li class="flex items-center space-x-3">
-                        <span
-                            class="flex items-center justify-center rounded-full size-5 text-bluegreen"
-                        >
-                            <i
-                                class="fa-sharp fa-light fa-circle-check fa-fw"
-                            ></i>
-                        </span>
-
-                        <span>Verplicht bij verkoop of verhuur.</span>
-                    </li>
-
-                    <li class="flex items-center space-x-3">
-                        <span
-                            class="flex items-center justify-center rounded-full size-5 text-bluegreen"
-                        >
-                            <i
-                                class="fa-sharp fa-light fa-circle-check fa-fw"
-                            ></i>
-                        </span>
-
-                        <span> Vergroot de waarde van uw huis. </span>
-                    </li>
-
-                    <li class="flex items-center space-x-3">
-                        <span class="flex items-center justify-center rounded-full size-5 text-bluegreen" >
-                            <i class="fa-sharp fa-light fa-circle-check"></i>
-                        </span>
-
-                        <span> Professionele begeleiding verzekerd. </span>
-                    </li>
-                </ul>
-                <!-- End List -->
             </div>
         </div>
         <!-- End Col -->
     </div>
     <!-- End Grid -->
+
+    {% if content_blocks %}
+        {% for item in content_blocks %}
+            {% if item.type == 'paragraph' %}
+                <div class="my-10 lg:my-20">
+                    <h2 class="text-2xl font-bold">{{ item.title }}</h2>
+                    {{ item.content | markdown | safe }}
+                </div>
+            {% elif item.type == 'textimage' %}
+                {% include "./partials/textimage.html" %}
+            {% endif %}
+        {% endfor%}
+    {% endif %}
+
+
     {% if gallery %}
     <div class="grid grid-cols-2 gap-4 mt-10 lg:mt-20">
         {% for item in gallery %}

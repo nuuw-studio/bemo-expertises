@@ -5,7 +5,19 @@ collections:
       - label: "Homepage"
         name: "home"
         file: "src/index.html"
+        editor:
+          preview: false
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Intro, name: intro, widget: markdown }
+          - { label: "Hero afbeelding", name: "hero_image", widget: "image", hint: "Afbeelding voor de hero sectie op de homepage" }
+          - label: call to actions
+            name: cta_buttons
+            widget: list
+            min: 0
+            max: 2
+            hint: "Optionele call to action buttons voor de hero sectie"
+            fields:
+              - { label: "Button tekst", name: "text", widget: "string" }
+              - { label: "Button link", name: "link", widget: "string" }
           - partial: "seo"
