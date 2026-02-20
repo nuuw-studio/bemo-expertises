@@ -2,7 +2,7 @@
 backend:
   name: git-gateway
   repo: nuuw-studio/bemo-expertises
-  branch: main
+  branch: master
   auth_type: pkce
   base_url: https://auth.decapbridge.com
   auth_endpoint: /sites/ed9f3538-58d6-4d68-9ec3-01465c193388/pkce
