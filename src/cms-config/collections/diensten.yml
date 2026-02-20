@@ -11,7 +11,7 @@ collections:
       - label: "Overzicht informatie"
         name: "overview"
         widget: "object"
-        summary: '{{fields.name}}: {{fields.birthdate}}'
+        summary: '{{fields.title}}: {{fields.description}}'
         fields:
             - { label: "Overzicht icoon", name: "icon", widget: "string", hint: "Gebruik FontAwesome icon naam, e.g., 'file-certificate'" }
             - { label: "overzicht afbeelding", name: "intro_image", widget: "image", hint: "Afbeelding voor blokje in dienstenlijst", required: false }
@@ -34,14 +34,6 @@ collections:
               - { label: Tekst, name: content, widget: "markdown" }
           - partial: "textimage"
           - partial: "iconlist"
+          - partial: "gallery"
 
-      - label: Galerij
-        label_singular: Afbeelding
-        name: gallery
-        widget: list
-        required: false
-        hint: "Optionele galerij van afbeeldingen voor de dienst pagina"
-        fields:
-          - { label: Afbeelding, name: image, widget: image }
-          - { label: Bijschrift, name: caption, widget: string, required: false }
       - partial: "seo"

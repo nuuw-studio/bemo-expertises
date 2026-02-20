@@ -1,24 +1,29 @@
 hero:
-  - { label: "hero afbeelding", name: "hero_image", widget: "image", hint: "Hero afbeelding voor de dienst pagina" }
+  label: Hero
+  label_singular: hero
+  name: hero
+  widget: object
+  fields:
+    - { label: "hero afbeelding", name: "hero_image", widget: "image", hint: "Hero afbeelding voor de dienst pagina" }
 
-  - label: "Hero inhoud"
-    name: "hero_content"
-    widget: list
-    types:
-      - label: "Tekst"
-        name: "text"
-        widget: object
-        fields:
-          - { label: "Inhoud", name: "content", widget: markdown }
+    - label: "Hero inhoud"
+      name: "hero_content"
+      widget: list
+      types:
+        - label: "Tekst"
+          name: "text"
+          widget: object
+          fields:
+            - { label: "Inhoud", name: "content", widget: markdown }
 
-      - label: "Icon list"
-        name: "iconlist"
-        widget: object
-        fields:
-          - label: "Items"
-            name: "items"
-            widget: list
-            hint: "Voeg items toe aan de lijst"
-            fields:
-              - { label: "Icon", name: "icon", widget: string, hint: "FontAwesome icon name, e.g., 'check-circle'", default: "check-circle" }
-              - { label: "text", name: "text", widget: string }
+        - label: "Icon list"
+          name: "iconlist"
+          widget: object
+          fields:
+            - label: "Items"
+              name: "items"
+              widget: list
+              hint: "Voeg items toe aan de lijst"
+              fields:
+                - { label: "Icon", name: "icon", widget: string, hint: "FontAwesome icon name, e.g., 'check-circle'", default: "check-circle" }
+                - { label: "text", name: "text", widget: string }
