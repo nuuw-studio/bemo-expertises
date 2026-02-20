@@ -1,0 +1,39 @@
+collections:
+  - label: "Globals"
+    name: "settings"
+    editor:
+      preview: false
+    files:
+      - label: "Navigation"
+        name: "items"
+        file: "src/_data/navigation.yaml"
+        fields:
+          - label: Nav Items
+            name: items
+            widget: list
+            allow_add: true
+            collapsed: true
+            fields:
+              - { label: Title, name: text, widget: string }
+              - { label: URL, name: url, widget: string }
+      - label: "diensten overzicht instellingen"
+        name: "features_overview"
+        file: "src/_data/features_overview.yaml"
+        fields:
+          - { label: Titel, name: title, widget: string }
+          - { label: Beschrijving, name: description, widget: text }
+          - label: Call to Action
+            name: cta
+            widget: object
+            fields:
+              - { label: Tekst, name: text, widget: string }
+              - { label: URL, name: url, widget: string }
+
+      - label: "Meta/SEO Settings"
+        name: "settings"
+        file: "src/_data/settings.yaml"
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Author, name: author, widget: string }
+          - { label: URL, name: url, widget: string }
+          - partial: "seo"

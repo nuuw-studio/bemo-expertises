@@ -1,0 +1,69 @@
+---
+title: Dienst
+layout: default
+---
+
+<main class="container px-4 py-10 sm:px-6 lg:px-8 lg:py-20">
+  <!-- Grid -->
+  <div class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
+    <div class="relative w-full h-full overflow-hidden min-h-40">
+      <img
+        class="absolute object-cover w-full h-full rounded-xl"
+        data-src="/static/img/epc.jpg"
+        src="{{ hero.hero_image | default('/static/img/epc.jpg') }}"
+        alt="epc"
+      />
+    </div>
+    <!-- End Col -->
+    <div class="py-8 mt-5 sm:mt-10 lg:mt-0 lg:py-12">
+      <div class="space-y-6 sm:space-y-8">
+        <!-- Title -->
+        <div
+          class="space-y-2 md:space-y-4 [&>ul]:space-y-2 sm:[&>ul]:space-y-4"
+        >
+          <h2 class="text-3xl font-bold lg:text-4xl hyphens-auto">
+            {{ title }}
+          </h2>
+          {% if hero.hero_content %} {% for item in hero.hero_content %} {% if
+          item.type == 'text' %} {{ item.content | markdown |safe }} {% endif %}
+          {% if item.type == 'iconlist' %}
+          <ul class="space-y-2 sm:space-y-4">
+            {% for listitem in item.items %}
+            <li class="flex items-center space-x-3">
+              <span
+                class="flex items-center justify-center rounded-full size-5 text-bluegreen"
+              >
+                <i
+                  class="fa-sharp fa-light fa-{{ listitem.icon | default('circle-check') }} fa-fw"
+                ></i>
+              </span>
+
+              <span>{{ listitem.text }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %} {% endfor %} {% endif %}
+        </div>
+        <!-- End Title -->
+      </div>
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Grid -->
+
+  {% if content_blocks %} {% for item in content_blocks %} {% if item.type ==
+  'paragraph' %}
+  <div class="py-8 mt-5 sm:mt-10 lg:mt-0 lg:py-12">
+    <div class="space-y-2 md:space-y-4">
+      <h2 class="text-3xl font-bold lg:text-4xl hyphens-auto">
+        {{ item.title}}
+      </h2>
+      {{ item.content | markdown | safe }}
+    </div>
+  </div>
+  {% elif item.type == 'textimage' %} {% include "./partials/textimage.html" %}
+  {% elif item.type == 'gallery' %} {% include "./partials/gallery.html" %} {%
+  endif %} {% endfor%} {% endif %}
+</main>
+
+{% include "../_includes/partials/contact.html" %}

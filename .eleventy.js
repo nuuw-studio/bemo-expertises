@@ -2,8 +2,10 @@ const yaml = require('js-yaml')
 const { DateTime } = require('luxon')
 const { eleventyImageTransformPlugin } = require('@11ty/eleventy-img')
 const htmlmin = require('html-minifier')
+const markdownIt = require("markdown-it");
 
 module.exports = function (eleventyConfig) {
+
     // Disable automatic use of your .gitignore
     eleventyConfig.setUseGitIgnore(false)
 
@@ -16,6 +18,9 @@ module.exports = function (eleventyConfig) {
             'dd LLL yyyy'
         )
     })
+
+    eleventyConfig.addWatchTarget("src/cms-config/**/*.yml");
+    eleventyConfig.addWatchTarget("src/cms-config/**/*.js");
 
     // To Support .yaml Extension in _data
     // You may remove this if you can use JSON
@@ -44,6 +49,15 @@ module.exports = function (eleventyConfig) {
         },
     })
 
+    // Add within your config module
+    const md = new markdownIt({
+        html: true,
+    });
+
+    eleventyConfig.addFilter("markdown", (content) => {
+        return md.render(content);
+    });
+
     // Minify HTML
     eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
         // Eleventy 1.0+: use this.inputPath and this.outputPath instead
@@ -66,5 +80,7 @@ module.exports = function (eleventyConfig) {
             input: 'src',
         },
         htmlTemplateEngine: 'njk',
+        // Setting the base URL
+        url: 'https://bemo-expertises.be' // Change to your site's URL
     }
 }

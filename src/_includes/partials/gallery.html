@@ -1,0 +1,12 @@
+<div class="grid grid-cols-2 gap-4 mt-10 lg:mt-20">
+  {% for image in item.images %}
+  <div class="relative w-full h-full overflow-hidden aspect-4/3">
+    <img
+      class="absolute object-cover w-full h-full rounded-xl"
+      data-src="/static/img/epc.jpg"
+      src="{{ image.image | default('/static/img/epc.jpg') }}"
+      alt="epc"
+    />
+  </div>
+  {% endfor %}
+</div>

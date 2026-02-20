@@ -1,0 +1,14 @@
+gallery:
+  label: Galerij
+  label_singular: Afbeelding
+  name: gallery
+  widget: object
+  fields:
+    - label: Afbeeldingen
+      name: images
+      widget: list
+      required: false
+      hint: "Optionele galerij van afbeeldingen voor de dienst pagina"
+      fields:
+        - { label: Afbeelding, name: image, widget: image }
+        - { label: Bijschrift, name: caption, widget: string, required: false }

@@ -1,0 +1,12 @@
+iconlist:
+- label: "Icon list"
+  name: "iconlist"
+  widget: object
+  fields:
+    - label: "Items"
+      name: "items"
+      widget: list
+      hint: "Voeg items toe aan de lijst"
+      fields:
+        - { label: "Icon", name: "icon", widget: string, hint: "FontAwesome icon name, e.g., 'check-circle'", default: "check-circle" }
+        - { label: "text", name: "text", widget: string }

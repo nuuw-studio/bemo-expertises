@@ -1,32 +1,34 @@
 {
-    "scripts": {
-        "start": "npm-run-all --parallel css eleventy browsersync",
-        "eleventy": "eleventy --watch",
-        "debug": "set DEBUG=* & eleventy",
-        "css": "postcss src/static/css/tailwind.css --o _site/static/css/style.css --watch",
-        "build": "eleventy && npx tailwindcss -i src/static/css/tailwind.css -o _site/static/css/style.css --minify",
-        "browsersync": "browser-sync start --server _site --files _site --port 8080 --no-notify --no-open"
-    },
-    "devDependencies": {
-        "@11ty/eleventy": "^3.0.0-alpha.6",
-        "@tailwindcss/typography": "^0.5.0-alpha.3",
-        "alpinejs": "^3.7.1",
-        "autoprefixer": "^10.4.21",
-        "browser-sync": "^3.0.4",
-        "cross-env": "^7.0.3",
-        "cssnano": "^5.0.15",
-        "html-minifier": "^4.0.0",
-        "js-yaml": "^4.1.0",
-        "luxon": "^2.3.0",
-        "npm-run-all": "^4.1.5",
-        "postcss": "^8.5.6",
-        "postcss-cli": "^9.1.0",
-        "tailwindcss": "^4.1.16"
-    },
-    "dependencies": {
-        "@11ty/eleventy-img": "^4.0.2",
-        "@tailwindcss/cli": "^4.1.16",
-        "@tailwindcss/postcss": "^4.1.16",
-        "preline": "^3.2.3"
-    }
+  "scripts": {
+    "start": "npm-run-all --parallel css eleventy browsersync",
+    "eleventy": "eleventy --watch",
+    "debug": "set DEBUG=* & eleventy",
+    "css": "postcss src/static/css/tailwind.css --o _site/static/css/style.css --watch",
+    "build": "eleventy && npx tailwindcss -i src/static/css/tailwind.css -o _site/static/css/style.css --minify",
+    "browsersync": "browser-sync start --server _site --files _site --port 8080 --no-notify --no-open"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0-alpha.6",
+    "@tailwindcss/typography": "^0.5.0-alpha.3",
+    "alpinejs": "^3.7.1",
+    "autoprefixer": "^10.4.21",
+    "browser-sync": "^3.0.4",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.15",
+    "html-minifier": "^4.0.0",
+    "js-yaml": "^4.1.1",
+    "luxon": "^2.3.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^4.1.16"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^4.0.2",
+    "@tailwindcss/cli": "^4.1.16",
+    "@tailwindcss/postcss": "^4.1.16",
+    "deepmerge": "^4.3.1",
+    "dotenv": "^17.2.3",
+    "preline": "^3.2.3"
+  }
 }

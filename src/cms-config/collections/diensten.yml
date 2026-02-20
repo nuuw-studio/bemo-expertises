@@ -1,0 +1,39 @@
+collections:
+  - label: "Diensten"
+    name: "diensten"
+    folder: "src/diensten"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Tags", name: "tags", widget: "hidden", default: "dienst" }
+      - { label: "Titel", name: "title", widget: "string" }
+      - label: "Overzicht informatie"
+        name: "overview"
+        widget: "object"
+        summary: '{{fields.title}}: {{fields.description}}'
+        fields:
+            - { label: "Overzicht icoon", name: "icon", widget: "string", hint: "Gebruik FontAwesome icon naam, e.g., 'file-certificate'" }
+            - { label: "overzicht afbeelding", name: "intro_image", widget: "image", hint: "Afbeelding voor blokje in dienstenlijst", required: false }
+            - { label: "Titel", name: "title", widget: "string" }
+            - { label: "Beschrijving", name: "description", widget: "string" }
+            - { label: "Lees meer link tekst", name: "read_more", widget: "string", default: "Lees meer", required: false }
+
+      - partial: "hero"
+
+      - label: Inhoud
+        name: content_blocks
+        widget: list
+        hint: "Voeg inhoudsblokken toe aan de dienst pagina"
+        types:
+          - label: Paragraaf
+            name: paragraph
+            widget: "object"
+            fields:
+              - { label: Titel, name: title, widget: "string" }
+              - { label: Tekst, name: content, widget: "markdown" }
+          - partial: "textimage"
+          - partial: "iconlist"
+          - partial: "gallery"
+
+      - partial: "seo"
