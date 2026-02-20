@@ -1,3 +1,4 @@
+# Use DecapBridge PKCE auth (required)
 backend:
   name: git-gateway
   repo: nuuw-studio/bemo-expertises
@@ -8,6 +9,7 @@ backend:
   auth_token_endpoint: /sites/ed9f3538-58d6-4d68-9ec3-01465c193388/token
   gateway_url: https://gateway.decapbridge.com
 
+  # See who did what (optional)
   commit_messages:
     create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
     update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge

@@ -1,29 +1,5 @@
 ---
 intro_image: /static/img/epc-2.jpg
-tags: dienst
-title: EPC | Energieprestatiecertificaat
-overview:
-  icon: file-certificate
-  description: Vertrouw op onze deskundigheid voor nauwkeurige EPC-certificeringen.
-  title: EPC | Energieprestatiecertificaat
-hero_image: /static/img/epc-3.jpg
-hero_content:
-  - type: text
-    content: >-
-      Een EPC geeft aan hoe energiezuinig een gebouw is en is verplicht bij
-      verkoop of verhuur. Het energielabel (van A+ tot F) toont hoe goed het
-      gebouw scoort op vlak van energieverbruik.
-
-
-      Wij voeren een grondige inspectie uit van de gebouwschil (isolatie, ramen, dak, muren), verwarmingsinstallatie, ventilatie en hernieuwbare energiebronnen. Op basis van deze gegevens stellen we een officieel EPC op via de Vlaamse energieprestatiedatabank. Je ontvangt een duidelijk en gedetailleerd rapport.
-  - type: iconlist
-    items:
-      - icon: check-circle
-        text: Verplicht bij verkoop of verhuur.
-      - icon: check-circle
-        text: Vergroot de waarde van uw huis.
-      - icon: check-circle
-        text: Professionele begeleiding verzekerd.
 content_blocks:
   - type: textimage
     image_position: right
@@ -64,7 +40,51 @@ content_blocks:
 gallery:
   - image: /static/img/epc-2.jpg
   - image: /static/img/EPC1.jpg
+hero_content:
+  - type: text
+    content: >-
+      Een EPC geeft aan hoe energiezuinig een gebouw is en is verplicht bij
+      verkoop of verhuur. Het energielabel (van A+ tot F) toont hoe goed het
+      gebouw scoort op vlak van energieverbruik.
+
+
+      Wij voeren een grondige inspectie uit van de gebouwschil (isolatie, ramen, dak, muren), verwarmingsinstallatie, ventilatie en hernieuwbare energiebronnen. Op basis van deze gegevens stellen we een officieel EPC op via de Vlaamse energieprestatiedatabank. Je ontvangt een duidelijk en gedetailleerd rapport.
+  - type: iconlist
+    items:
+      - icon: check-circle
+        text: Verplicht bij verkoop of verhuur.
+      - icon: check-circle
+        text: Vergroot de waarde van uw huis.
+      - icon: check-circle
+        text: Professionele begeleiding verzekerd.
+hero_image: /static/img/epc-3.jpg
+tags: dienst
+title: EPC | Energieprestatiecertificaat
 icon: file-certificate
+overview:
+  icon: file-certificate
+  description: Vertrouw op onze deskundigheid voor nauwkeurige EPC-certificeringen.
+  title: EPC | Energieprestatiecertificaat
+hero:
+  hero_content:
+    - type: text
+      content: Het Energieprestatiecertificaat (EPC) is een essentiële stap bij de
+        verkoop of verhuur van uw huis. Het geeft u inzicht in de
+        energiezuinigheid en helpt potentiële kopers of huurders te begrijpen
+        hoe efficiënt uw woning is. Bij BeMo Expertises maken we het proces
+        eenvoudig en probleemloos. Of u nu een huis, een klein kantoorgebouw of
+        zelfs een appartement bezit, onze deskundigen staan klaar om u te
+        helpen. Laat ons uw EPC regelen, zodat u met vertrouwen kunt verkopen of
+        verhuren.
+    - type: iconlist
+      items:
+        - icon: check-circle
+          text: Verplicht bij verkoop of verhuur.
+        - icon: check-circle
+          text: Vergroot de waarde van uw huis.
+        - icon: check-circle
+          text: Professionele begeleiding verzekerd.
+  hero_image: /static/img/EPC1.jpg
 description: Vertrouw op onze deskundigheid voor nauwkeurige EPC-certificeringen.
 ---
 Een EPC geeft aan hoe energiezuinig een gebouw is en is verplicht bij verkoop of verhuur. Het energielabel (van A+ tot F) toont hoe goed het gebouw scoort op vlak van energieverbruik. 

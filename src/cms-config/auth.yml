@@ -1,3 +1,4 @@
+# Enable PKCE fields (optional, recommended)
 auth:
   email_claim: email
   first_name_claim: first_name
